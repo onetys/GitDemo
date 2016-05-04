@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2Ac-oK-rhx">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="bQD-0p-hMV">
+            <objects>
+                <navigationController id="2Ac-oK-rhx" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zxi-OK-Kyv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sPk-KV-i0k"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aLC-vk-gWl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-430" y="314.99999999999994"/>
+        </scene>
+        <!--声音控制-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qJB-dO-k0N"/>
+                        <viewControllerLayoutGuide type="bottom" id="50c-Zv-D1y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="DLo-4w-5kX">
+                                <rect key="frame" x="113" y="135" width="94" height="29"/>
+                                <connections>
+                                    <action selector="change:" destination="BYZ-38-t0r" eventType="valueChanged" id="BtQ-Qd-awY"/>
+                                </connections>
+                            </stepper>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="zm8-PG-pB4">
+                                <rect key="frame" x="42" y="216" width="236" height="31"/>
+                                <connections>
+                                    <action selector="slider:" destination="BYZ-38-t0r" eventType="valueChanged" id="mo8-3j-eZ4"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zm8-PG-pB4" firstAttribute="centerX" secondItem="DLo-4w-5kX" secondAttribute="centerX" id="FIK-IB-qd9"/>
+                            <constraint firstItem="zm8-PG-pB4" firstAttribute="top" secondItem="DLo-4w-5kX" secondAttribute="bottom" constant="52" id="H52-ez-81N"/>
+                            <constraint firstItem="DLo-4w-5kX" firstAttribute="top" secondItem="qJB-dO-k0N" secondAttribute="bottom" constant="71" id="K0C-WB-Xs2"/>
+                            <constraint firstItem="DLo-4w-5kX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kYb-AI-4LE"/>
+                            <constraint firstAttribute="trailing" secondItem="zm8-PG-pB4" secondAttribute="trailing" constant="44" id="sqb-2C-Gvp"/>
+                            <constraint firstItem="zm8-PG-pB4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="44" id="veC-9k-XLW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="声音控制" id="Hv7-dA-RzC"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="slider" destination="zm8-PG-pB4" id="C7U-ej-fEA"/>
+                        <outlet property="stepper" destination="DLo-4w-5kX" id="cld-VM-J9K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="244" y="314.99999999999994"/>
+        </scene>
+    </scenes>
+</document>
